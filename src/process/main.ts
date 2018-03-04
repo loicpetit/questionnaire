@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as url from "url";
+import * as debug from "./debug"
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -13,13 +14,15 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-      pathname: path.join(__dirname, "../renderer/index.html"),
-      protocol: "file:",
-      slashes: true,
+    pathname: path.join(__dirname, "../renderer/index.html"),
+    protocol: "file:",
+    slashes: true,
   }));
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  if(debug.isDebug()){
+    debug.openDevTools(mainWindow);
+  }
 
   // Emitted when the window is closed.
   mainWindow.on("closed", () => {

@@ -22,10 +22,11 @@
   "main": "target/process/main.js",
   "scripts": {
     "build": "gulp build",
-    "gulp": "gulp",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "electron": "electron .",
+    "electron:debug": "electron --inspect=5858 .",
     "start": "npm run build && npm run electron",
+    "debug": "npm run build && cross-env ELECTRON_DEBUG=true npm run electron:debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -38,16 +39,17 @@
     "@uirouter/angular": "^1.0.1",
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
-    "mdbootstrap": "^4.5.0",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
     "@types/core-js": "^0.9.46",
+    "cross-env": "^5.1.3",
     "del": "^3.0.0",
     "electron": "^1.8.2",
     "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^4.0.1",
     "run-sequence": "^2.2.1",
     "tslint": "^5.9.1",

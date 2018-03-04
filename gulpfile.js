@@ -1,7 +1,8 @@
-var gulp = require('gulp');
-var gulpts = require('gulp-typescript');
-var runSequence = require('run-sequence');
-var del = require('del');
+const gulp = require('gulp');
+const typescript = require('gulp-typescript');
+const sourcemaps = require('gulp-sourcemaps');
+const runSequence = require('run-sequence');
+const del = require('del');
 
 gulp.task('default', ['build']);
 
@@ -10,8 +11,12 @@ gulp.task('build', function(done){
 });
 
 gulp.task('build:typescript', function () {
-    var tsconfig = gulpts.createProject('tsconfig.json');
-    return tsconfig.src().pipe(tsconfig()).js.pipe(gulp.dest("target"));
+    var project = typescript.createProject('tsconfig.json');
+    return project.src()
+        .pipe(sourcemaps.init())
+        .pipe(project()).js
+        .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '../src'}))
+        .pipe(gulp.dest("target"));
 });
 
 gulp.task('build:html', function(){

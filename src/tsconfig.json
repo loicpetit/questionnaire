@@ -7,22 +7,16 @@
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "outDir": "target",
+        "outDir": "../target",
         "baseUrl": ".",
         "paths": {
             "*": [
-                "node_modules/*"
+                "../node_modules/*"
             ]
         },
         "lib": [
             "es6",
             "dom"
         ]
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+    }
 }

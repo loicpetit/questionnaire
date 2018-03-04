@@ -2,9 +2,21 @@
 
 ## Scripts
 
+### clean
+
+Delete the generated files.
+
 ### build
 
 Build the application in the target folder.
+
+### buildtest
+
+Build the application tests in the target folder.
+
+### jasmine
+
+Execute tests.
 
 ### electron
 
@@ -26,7 +38,7 @@ Build the application, set the environment variables for the debug mode and laun
 
 ### test
 
-Launch the tests.
+Build the application, build the tests and launch the tests.
 
 ## Dependencies
 
@@ -65,6 +77,10 @@ List of dependencies needed for Bootstrap :
 
 ## Dev dependencies
 
+### @types
+
+Typescript declaration files.
+
 ### cross-env
 
 Enable to set environment variables on every OS.  
@@ -93,6 +109,10 @@ Gulp plugin to lint the typescript files.
 ### gulp-typescript
 
 Gulp plugin to compile the typescript files.
+
+### jasmine-node
+
+Used to test node modules with Jasmine.
 
 ### run-sequence
 

@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const tslint = require("gulp-tslint");
 const typescript = require('gulp-typescript');
 const sourcemaps = require('gulp-sourcemaps');
 const runSequence = require('run-sequence');
@@ -13,6 +14,10 @@ gulp.task('build', function(done){
 gulp.task('build:typescript', function () {
     var project = typescript.createProject('tsconfig.json');
     return project.src()
+        .pipe(tslint({
+            formatter: "verbose"
+        }))
+        .pipe(tslint.report())
         .pipe(sourcemaps.init())
         .pipe(project()).js
         .pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '../src'}))

@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import * as path from "path";
 import * as url from "url";
-import * as debug from "./debug"
+import * as debug from "./debug";
 
 let mainWindow: Electron.BrowserWindow;
 
@@ -20,7 +20,7 @@ function createWindow() {
   }));
 
   // Open the DevTools.
-  if(debug.isDebug()){
+  if (debug.isDebug()) {
     debug.openDevTools(mainWindow);
   }
 

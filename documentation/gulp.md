@@ -21,6 +21,10 @@ Lint, generate the source maps and compile the typescript files.
 
 Copy the html in the target directory in order to keep relative file path working.
 
+### build:lib
+
+Copy files from libraries in the target.
+
 ### build:clean
 Delete the src in target directory.
 

@@ -10,7 +10,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', function (done) {
-    runSequence('build:clean', ['build:typescript', 'build:html'], done)
+    runSequence('build:clean', ['build:typescript', 'build:html', 'build:lib'], done)
 });
 
 gulp.task('build:typescript', function () {
@@ -28,6 +28,13 @@ gulp.task('build:typescript', function () {
 
 gulp.task('build:html', function () {
     return gulp.src('src/**/*.html').pipe(gulp.dest('target/src'))
+});
+
+gulp.task('build:lib', function(){
+    return gulp.src([
+        'node_modules/bootstrap/dist/css/bootstrap.min.css'
+    ])
+    .pipe(gulp.dest('target/src/window/lib'));
 });
 
 gulp.task('build:clean', function () {

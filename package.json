@@ -19,17 +19,16 @@
     "url": "https://github.com/loicpetit/questionnaire/issues"
   },
   "homepage": "https://github.com/loicpetit/questionnaire#readme",
-  "main": "target/src/process/main.js",
+  "main": "target/process/main.js",
   "scripts": {
     "clean": "gulp clean",
     "build": "gulp build",
-    "buildtest": "gulp buildtest",
-    "jasmine": "jasmine-node --verbose target/test/",
+    "jasmine": "jasmine-node --verbose target/",
     "electron": "electron .",
     "electron:debug": "electron --inspect=5858 .",
     "start": "npm run build && npm run electron",
     "debug": "npm run build && cross-env ELECTRON_DEBUG=true npm run electron:debug",
-    "test": "npm run build && npm run buildtest && npm run jasmine"
+    "test": "npm run build  && npm run jasmine"
   },
   "dependencies": {
     "@angular/common": "^5.2.7",

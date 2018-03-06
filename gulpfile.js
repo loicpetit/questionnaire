@@ -14,46 +14,27 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('build:typescript', function () {
-    var project = typescript.createProject('src/tsconfig.json');
+    var project = typescript.createProject('tsconfig.json');
     return project.src()
-        .pipe(tslint({
-            formatter: "verbose"
-        }))
+        .pipe(tslint())
         .pipe(tslint.report())
         .pipe(sourcemaps.init())
         .pipe(project()).js
-        .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: '../../src' }))
-        .pipe(gulp.dest("target/src"));
+        .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: '../src' }))
+        .pipe(gulp.dest("target"));
 });
 
 gulp.task('build:html', function () {
-    return gulp.src('src/**/*.html').pipe(gulp.dest('target/src'))
+    return gulp.src('src/**/*.html').pipe(gulp.dest('target'))
 });
 
 gulp.task('build:lib', function(){
     return gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css'
     ])
-    .pipe(gulp.dest('target/src/window/lib'));
+    .pipe(gulp.dest('target/window/lib'));
 });
 
 gulp.task('build:clean', function () {
-    return del('target/src')
-});
-
-gulp.task('buildtest', function (done) {
-    runSequence('buildtest:clean', ['buildtest:typescript'], done);
-});
-
-gulp.task('buildtest:clean', function () {
-    return del('target/test')
-});
-
-gulp.task('buildtest:typescript', function () {
-    var project = typescript.createProject('test/tsconfig.json');
-    return gulp.src('test/**/*.ts', { base: 'test' })
-        .pipe(sourcemaps.init())
-        .pipe(project()).js
-        .pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: '../../test' }))
-        .pipe(gulp.dest('target/test'))
+    return del('target')
 });

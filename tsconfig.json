@@ -7,11 +7,11 @@
         "experimentalDecorators": true,
         "noImplicitAny": true,
         "sourceMap": true,
-        "outDir": "../target",
+        "outDir": "target",
         "baseUrl": ".",
         "paths": {
             "*": [
-                "../node_modules/*"
+                "node_modules/*"
             ]
         },
         "lib": [

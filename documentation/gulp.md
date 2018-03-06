@@ -28,17 +28,5 @@ Copy files from libraries in the target.
 ### build:clean
 Delete the src in target directory.
 
-### buildtest
-
-Build the application test in the target directory.
-
-### buildtest:clean
-
-Delete the test in target directory.
-
-### buildtest:typescript
-
-Generate the source maps and compile the typescript files.
-
 ---
 [Back to summary](../README.md)

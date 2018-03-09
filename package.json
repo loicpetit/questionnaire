@@ -22,6 +22,7 @@
   "main": "target/process/main.js",
   "scripts": {
     "clean": "gulp clean",
+    "lint": "tslint --project . --force",
     "build": "gulp build",
     "jasmine": "jasmine-node --verbose target/",
     "electron": "electron .",

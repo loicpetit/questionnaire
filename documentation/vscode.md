@@ -63,5 +63,26 @@ VS Code configuration (launch.json)
 }
 ```
 
+### The tests
+
+VS Code configuration (launch.json)  
+*Execute directly the jasmine-node module in debug*
+```json
+{
+    "name": "Debug Tests",
+    "type": "node",
+    "request": "launch",
+    "program": "${workspaceRoot}/node_modules/jasmine-node/bin/jasmine-node",
+    "stopOnEntry": false,
+    "args": [
+        "target/",
+        "--verbose"
+    ],
+    "cwd": "${workspaceRoot}",
+    "sourceMaps": true,
+    "outFiles": ["${workspaceRoot}/target/**/*.js"]
+}
+```
+
 ---
 [Back to summary](../README.md)

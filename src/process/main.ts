@@ -3,6 +3,10 @@ import * as path from "path";
 import * as url from "url";
 import * as debug from "./debug";
 
+if (debug.isDebug()) {
+  require("electron-reload")(path.join(__dirname, ".."));
+}
+
 let mainWindow: Electron.BrowserWindow;
 
 function createWindow() {

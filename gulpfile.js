@@ -45,6 +45,6 @@ gulp.task('build:clean', function () {
     return del('target')
 });
 
-gulp.task('watch', ['build'], function () {
+gulp.task('watch', function () {
     gulp.watch(['src/**/*.ts', 'src/**/*.html'], ['build:typescript', 'build:html']);
 });

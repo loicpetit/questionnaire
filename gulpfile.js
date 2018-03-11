@@ -1,9 +1,10 @@
 const gulp = require('gulp');
+const cache = require('gulp-cached');
+const sourcemaps = require('gulp-sourcemaps');
 const tslint = require("gulp-tslint");
 const typescript = require('gulp-typescript');
-const sourcemaps = require('gulp-sourcemaps');
-const runSequence = require('run-sequence');
 const del = require('del');
+const runSequence = require('run-sequence');
 
 const tsProject = typescript.createProject('tsconfig.json');
 
@@ -17,6 +18,7 @@ gulp.task('build', function (done) {
 
 gulp.task('build:typescript', function () {
     return gulp.src('src/**/*.ts')
+        .pipe(cache('typescript'))
         .pipe(tslint())
         .pipe(tslint.report({
             emitError: false
@@ -28,20 +30,21 @@ gulp.task('build:typescript', function () {
 });
 
 gulp.task('build:html', function () {
-    return gulp.src('src/**/*.html').pipe(gulp.dest('target'))
+    return gulp.src('src/**/*.html')
+        .pipe(cache('html'))
+        .pipe(gulp.dest('target'));
 });
 
-gulp.task('build:lib', function(){
+gulp.task('build:lib', function () {
     return gulp.src([
         'node_modules/bootstrap/dist/css/bootstrap.min.css'
-    ])
-    .pipe(gulp.dest('target/window/lib'));
+    ]).pipe(gulp.dest('target/window/lib'));
 });
 
 gulp.task('build:clean', function () {
     return del('target')
 });
 
-gulp.task('watch', ['build'], function(){
-    gulp.watch('src/**/*.ts', ['build:typescript']);
+gulp.task('watch', ['build'], function () {
+    gulp.watch(['src/**/*.ts', 'src/**/*.html'], ['build:typescript', 'build:html']);
 });

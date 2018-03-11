@@ -24,6 +24,7 @@
     "clean": "gulp clean",
     "lint": "tslint --project . --force",
     "build": "gulp build",
+    "watch": "gulp watch",
     "jasmine": "jasmine-node --verbose target/",
     "electron": "electron .",
     "electron:debug": "electron --inspect=5858 .",

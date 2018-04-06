@@ -1,54 +1,14 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
-    <base href="./"/>
+  <meta charset="utf-8">
+  <title>Questionnaire</title>
+  <base href="/">
 
-    <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
-
 <body>
-    <div>
-        <h1>Hello World!</h1>
-        Nous utilisons Node
-        <script>document.write(process.versions.node)</script>, Chrome
-        <script>document.write(process.versions.chrome)</script>, et Electron
-        <script>document.write(process.versions.electron)</script>.
-    </div>
-
-    <div class="alert alert-primary" role="alert">
-        This is a primary alert—check it out!
-    </div>
-
-    <button type="button" class="btn btn-primary">Primary</button>
-
-    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-        Single toggle
-    </button>
-
-    <q-app></q-app>
-
-    <script>
-        // Librairies
-        //      Bootstrap
-        require('popper.js')
-        require('jquery')
-        require('bootstrap')
-        //      Angular
-        require('zone.js')
-        require('rxjs')
-        require('@angular/core')
-        require('@angular/common')
-        require('@angular/compiler')
-        require('@angular/platform-browser')
-        require('@angular/platform-browser-dynamic')
-        require('@angular/router')
-        require('@uirouter/angular')
-        // App
-        require('./index.js')
-    </script>
+  <app-root></app-root>
 </body>
-
 </html>

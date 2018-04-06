@@ -1,7 +1,9 @@
 {
   "name": "questionnaire",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Questionnaire app with Electron, Bootstrap 4 and Angular",
+  "author": "loicpetit",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/loicpetit/questionnaire.git"
@@ -10,56 +12,53 @@
     "questionnaire",
     "electron",
     "bootstrap",
-    "bootstrap-4",
-    "angular"
+    "bootstrap 4",
+    "angular",
+    "typescript"
   ],
-  "author": "loicpetit",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/loicpetit/questionnaire/issues"
   },
   "homepage": "https://github.com/loicpetit/questionnaire#readme",
-  "main": "target/process/main.js",
   "scripts": {
-    "clean": "gulp clean",
-    "lint": "tslint --project . --force",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "jasmine": "jasmine-node --verbose target/",
-    "electron": "electron .",
-    "electron:debug": "electron --inspect=5858 .",
-    "start": "npm run build && npm run electron",
-    "debug": "npm run build && cross-env ELECTRON_DEBUG=true npm run electron:debug",
-    "test": "npm run build  && npm run jasmine"
+    "ng": "ng",
+    "serve": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint"
   },
   "dependencies": {
-    "@angular/common": "^5.2.7",
-    "@angular/compiler": "^5.2.7",
-    "@angular/core": "^5.2.7",
-    "@angular/platform-browser": "^5.2.7",
-    "@angular/platform-browser-dynamic": "^5.2.7",
-    "@angular/router": "^5.2.7",
-    "@uirouter/angular": "^1.0.1",
-    "bootstrap": "^4.0.0",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.12.9",
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+    "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.20"
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
-    "@types/jasmine": "^2.8.6",
-    "cross-env": "^5.1.3",
-    "del": "^3.0.0",
-    "electron": "^1.8.2",
-    "electron-reload": "^1.2.2",
-    "gulp": "^3.9.1",
-    "gulp-cached": "^1.1.1",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-tslint": "^8.1.3",
-    "gulp-typescript": "^4.0.1",
-    "jasmine-node": "^1.14.5",
-    "run-sequence": "^2.2.1",
-    "tslint": "^5.9.1",
-    "typescript": "^2.7.2"
+    "@angular/cli": "~1.7.3",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "codelyzer": "^4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-spec-reporter": "0.0.32",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
   }
 }

@@ -31,12 +31,12 @@
   ],
   "lint": [
     {
-      "tslintConfig": "src/window/tslint.json",
+      "tslintConfig": "tslint.json",
       "project": "src/window/main/tsconfig.app.json",
       "exclude": "**/node_modules/**"
     },
     {
-      "tslintConfig": "src/window/tslint.json",
+      "tslintConfig": "tslint.json",
       "project": "src/window/main/tsconfig.spec.json",
       "exclude": "**/node_modules/**"
     }

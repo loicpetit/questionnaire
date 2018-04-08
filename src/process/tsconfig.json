@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "declaration": false,
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "outDir": "../../dist/process",
+        "paths": {
+            "*": [
+                "../../node_modules/*"
+            ]
+        },
+        "target": "es5"
+    }
+}

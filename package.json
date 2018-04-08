@@ -33,7 +33,10 @@
     "lint": "concurrently --names \"process,window\" \"npm run lint:process\" \"npm run lint:window\"",
     "test:process": "jasmine-ts --config=src/process/jasmine.json --project=src/process/tsconfig.spec.json src/process/**/*.spec.ts",
     "test:window": "ng test",
-    "test": "concurrently --names \"process,window\" \"npm run test:process\" \"npm run test:window\""
+    "test": "concurrently --names \"process,window\" \"npm run test:process\" \"npm run test:window\"",
+    "watch:process": "tsc --project src/process/tsconfig.app.json --watch",
+    "watch:window": "ng build --watch",
+    "watch": "npm run clean && concurrently --kill-others --names \"process,window\" \"npm run watch:process\" \"npm run watch:window\""
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",

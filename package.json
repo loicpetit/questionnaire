@@ -21,6 +21,7 @@
     "url": "https://github.com/loicpetit/questionnaire/issues"
   },
   "homepage": "https://github.com/loicpetit/questionnaire#readme",
+  "main": "dist/process/main.js",
   "scripts": {
     "ng": "ng",
     "serve": "ng serve",
@@ -36,7 +37,10 @@
     "test": "concurrently --names \"process,window\" \"npm run test:process\" \"npm run test:window\"",
     "watch:process": "tsc --project src/process/tsconfig.app.json --watch",
     "watch:window": "ng build --watch",
-    "watch": "npm run clean && concurrently --kill-others --names \"process,window\" \"npm run watch:process\" \"npm run watch:window\""
+    "watch": "npm run clean && concurrently --kill-others --names \"process,window\" \"npm run watch:process\" \"npm run watch:window\"",
+    "electron": "electron .",
+    "electron:debug": "cross-env ELECTRON_DEBUG=true electron --inspect=5858 .",
+    "start": "npm run clean && npm run build && npm run electron"
   },
   "dependencies": {
     "@angular/animations": "^5.2.0",
@@ -61,7 +65,10 @@
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
     "concurrently": "^3.5.1",
+    "cross-env": "^5.1.4",
     "del-cli": "^1.1.0",
+    "electron": "^1.8.4",
+    "electron-reload": "^1.2.2",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "jasmine-ts": "^0.2.1",

@@ -5,33 +5,25 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug Tests",
-            "type": "node",
-            "request": "launch",
-            "program": "${workspaceRoot}/node_modules/jasmine-node/bin/jasmine-node",
-            "stopOnEntry": false,
-            "args": [
-                "target/",
-                "--verbose"
-            ],
-            "cwd": "${workspaceRoot}",
-            "sourceMaps": true,
-            "outFiles": ["${workspaceRoot}/target/**/*.js"]
+            "type": "chrome",
+            "request": "attach",
+            "name": "test:window:attach",
+            "port": 9222,
+            "webRoot": "${workspaceFolder}"
         },
         {
             "type": "node",
             "request": "attach",
-            "name": "Attach Main Process",
+            "name": "electron:attach",
             "port": 5858,
             "sourceMaps": true,
-            "outFiles": ["${workspaceRoot}/target/**/*.js"]
+            "outFiles": ["${workspaceRoot}/dist/**/*.js"]
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug",
+            "name": "electron:debug",
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": "build",
             "env": {
                 "ELECTRON_DEBUG": "true"
             },
@@ -41,7 +33,7 @@
             },
             "args" : ["."],
             "sourceMaps": true,
-            "outFiles": ["${workspaceRoot}/target/**/*.js"]
+            "outFiles": ["${workspaceRoot}/dist/**/*.js"]
         }
     ]
 }

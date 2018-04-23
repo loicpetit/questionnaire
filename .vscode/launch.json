@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "test:process",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/node_modules/jasmine-ts/lib/index.js",
+            "args": [
+                "--config=src/process/jasmine.json",
+                "--project=src/process/tsconfig.spec.json",
+                "src/process/**/*.spec.ts"
+            ],
+            "cwd": "${workspaceRoot}",
+            "protocol": "inspector",
+            "sourceMaps": true            
+        },
+        {
             "type": "chrome",
             "request": "attach",
             "name": "test:window:attach",

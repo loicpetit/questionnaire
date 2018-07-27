@@ -2,15 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Pages
-import { ConfigPage } from './config.page';
+import { QuestionsPage } from './questions.page';
 
 
 @NgModule({
   declarations: [
-    ConfigPage
+    QuestionsPage
   ],
   exports: [
-    ConfigPage
+    QuestionsPage
   ]
 })
-export class ConfigPagesModule { }
+export class QuestionPagesModule { }

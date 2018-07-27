@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //  Pages
-import { ConfigPage } from './config.page';
+import { ConfigPage } from './pages/config.page';
 
 // Routing
 const routes: Routes = [

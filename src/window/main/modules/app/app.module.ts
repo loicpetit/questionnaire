@@ -2,8 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Modules
-import { ConfigPagesModule } from '../config/pages/config-pages.module';
+import { QuestionModule } from '../question/question.module';
+import { ConfigModule } from '../config/config.module';
 import { AppRoutingModule } from './routing.module';
+// Services
+import { QuestionService } from '../question/question.service';
 //  App
 import { App } from './app';
 //  Components
@@ -19,7 +22,8 @@ import { AboutPage } from './pages/about.page';
   ],
   imports: [
     BrowserModule,
-    ConfigPagesModule,
+    QuestionModule,
+    ConfigModule,
     AppRoutingModule
   ],
   bootstrap: [App]

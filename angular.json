@@ -21,7 +21,7 @@
               "src/window/main/favicon.ico"
             ],
             "styles": [
-              "src/window/main/styles.scss"
+              "src/window/main/styles/global.scss"
             ],
             "scripts": []
           },

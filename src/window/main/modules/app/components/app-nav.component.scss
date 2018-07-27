@@ -1,0 +1,10 @@
+@import "../../../styles/variables.scss";
+
+.menu-item {
+    background: yellow;
+    display: block;
+    width: $menu-width;
+    height: $menu-width;
+    line-height: $menu-width;
+    text-align: center;
+}

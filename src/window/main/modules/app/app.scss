@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+:host {
+    display: block;
+    background: red;
+}
+
+:host app-nav {
+    background: blue;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: $menu-width;
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    margin-left: $menu-width;
+    overflow: auto;
+    padding: 20px;
+}
